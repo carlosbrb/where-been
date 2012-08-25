@@ -1,0 +1,8 @@
+%html
+  %head
+  %body
+    /= @data.class
+    - @data.each do |d|
+      %ul
+        %li= d[:venue][:location][:lat] 
+        %li= d[:venue][:location][:lng] 
