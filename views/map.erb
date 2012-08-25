@@ -21,8 +21,15 @@
        var latlng_<%= d[:id]%> = new google.maps.LatLng(<%= d[:venue][:location][:lat] %>, <%= d[:venue][:location][:lng] %>);
        var marker_<%= d[:id]%> = new google.maps.Marker({
          position: latlng_<%= d[:id]%>,
-         title: "<%= d[:venue][:name] %>"
+         title: "<%= d[:venue][:name] %>",
+         <% d[:venue][:categories].each do |c| %>
+          icon: '<%= c[:icon] %>'
+         <% end %>
+         
+
+
        });
+
 
     <% end %>
   
